@@ -1,5 +1,7 @@
 import { TextLoader } from "./TextLoader";
 
+// Playground: https://next.plnkr.co/edit/JgPIlgBpNQK8BwO2?open=Program.ts&preview
+
 class Program
 {
     public static Main(): void
