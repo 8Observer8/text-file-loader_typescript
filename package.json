@@ -1,0 +1,19 @@
+{
+    "name": "text-file-loader_typescript",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build-debug": "tsc -p tsconfig.debug.json",
+        "compile-release": "tsc -p tsconfig.release.json",
+        "bundle-release": "browserify public/js/Program.js -o public/js/bundle.js",
+        "minify-release": "uglifyjs public/js/bundle.js -o public/js/bundle.min.js",
+        "build-release": "npm run compile-release && npm run bundle-release && npm run minify-release"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/requirejs": "^2.1.31"
+    }
+}
