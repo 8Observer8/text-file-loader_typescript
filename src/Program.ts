@@ -6,9 +6,21 @@ class Program
 {
     public static Main(): void
     {
-        let filePath = "https://www.w3.org/TR/PNG/iso_8859-1.txt";
+        // FileReader
+        let inputElement = document.getElementById("input") as HTMLInputElement;
+        if (inputElement === null)
+        {
+            console.log("Failed to get the \"input\" element.");
+            return;
+        }
+        inputElement.onchange = (ev: Event) =>
+        {
+            TextLoader.LoadUsingFileReader(inputElement, this.OnLoadFile);
+        };
 
-        TextLoader.Load(filePath, this.OnLoadFile);
+        // XMLHTTPRequest
+        let filePath = "https://www.w3.org/TR/PNG/iso_8859-1.txt";
+        TextLoader.LoadUsingXMLHttpRequest(filePath, this.OnLoadFile);
     }
 
     public static OnLoadFile(fileContent: string): void

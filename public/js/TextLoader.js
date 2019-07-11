@@ -4,7 +4,7 @@ define(["require", "exports"], function (require, exports) {
     var TextLoader = /** @class */ (function () {
         function TextLoader() {
         }
-        TextLoader.Load = function (filePath, callback) {
+        TextLoader.LoadUsingXMLHttpRequest = function (filePath, callback) {
             var request = new XMLHttpRequest();
             request.onreadystatechange = function () {
                 if (request.readyState === 4 && request.status !== 404) {
@@ -13,6 +13,14 @@ define(["require", "exports"], function (require, exports) {
             };
             request.open("GET", filePath, true);
             request.send();
+        };
+        TextLoader.LoadUsingFileReader = function (input, callback) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                callback(reader.result);
+            };
+            var file = input.files[0];
+            reader.readAsText(file);
         };
         return TextLoader;
     }());
