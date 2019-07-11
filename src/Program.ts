@@ -1,6 +1,6 @@
 import { TextLoader } from "./TextLoader";
 
-// Playground: https://next.plnkr.co/edit/JgPIlgBpNQK8BwO2?open=Program.ts&preview
+// Playground: https://next.plnkr.co/edit/JgPIlgBpNQK8BwO2?preview
 
 class Program
 {
